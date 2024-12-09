@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-image: url('https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/wallpaper.jpg'); 
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      background-position: center; 
+      color: white;
+    }
+
+    h1 {
+      color: rgb(13, 182, 13);
+    }
+
+    .carousel-item img {
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-container .btn {
+      margin: 5px;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minerales en Minecraft</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <style>
+    body {
+      background-image: url('https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/wallpaper.jpg'); 
+      background-size: cover;
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      background-position: center; 
+      color: white;
+    }
+
+    h1 {
+      color: rgb(22, 117, 22);
+    }
+
+    .carousel-item img {
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn-container .btn {
+      margin: 5px;
+    }
+  </style>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Minerales en Minecraft</h1>
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-inner">
+        <!-- Primera imagen -->
+        <div class="carousel-item active">
+          <img src="https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/diamond.png" class="d-block w-100" alt="Diamante">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Diamante</h5>
+            <p>El mineral más valioso para herramientas y armaduras avanzadas.</p>
+          </div>
+        </div>
+        <!-- Segunda imagen -->
+        <div class="carousel-item">
+          <img src="https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/gold.png" class="d-block w-100" alt="Oro">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Oro</h5>
+            <p>Se utiliza para herramientas, relojes y decoración.</p>
+          </div>
+        </div>
+        <!-- Tercera imagen -->
+        <div class="carousel-item">
+          <img src="https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/iron.png" class="d-block w-100" alt="Hierro">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Hierro</h5>
+            <p>Muy útil para herramientas y armaduras de nivel intermedio.</p>
+          </div>
+        </div>
+        <!-- Cuarta imagen -->
+        <div class="carousel-item">
+          <img src="https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/redstone.png" class="d-block w-100" alt="Redstone">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Redstone</h5>
+            <p>Ideal para circuitos y mecanismos.</p>
+          </div>
+        </div>
+        <!-- Quinta imagen -->
+        <div class="carousel-item">
+          <img src="https://github.com/btoagg/minecraft_integradora/blob/main/imagenes/coal.png" class="d-block w-100" alt="Carbón">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Carbón</h5>
+            <p>Fundamental para crear antorchas y como combustible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones debajo del carrusel -->
+    <div class="btn-container">
+      <button class="btn btn-warning" onclick="moveCarousel(-1)">Anterior</button>
+      <button class="btn btn-success" onclick="moveCarousel(1)">Siguiente</button>
+      <button class="btn btn-danger" onclick="redirectToPage()">Salir</button>
+    </div>
+  </div>
+
+  <script>
+    // Función para mover el carrusel
+    function moveCarousel(direction) {
+      const carousel = document.getElementById('carouselExampleCaptions');
+      const activeItem = carousel.querySelector('.carousel-item.active');
+      const items = Array.from(carousel.querySelectorAll('.carousel-item'));
+      let currentIndex = items.indexOf(activeItem);
+
+      // Calcular el siguiente índice
+      let nextIndex = (currentIndex + direction + items.length) % items.length;
+
+      // Quitar la clase 'active' del elemento actual y añadirla al siguiente
+      activeItem.classList.remove('active');
+      items[nextIndex].classList.add('active');
+    }
+
+    // Función para redirigir a otra página
+    function redirectToPage() {
+      window.location.href = "index1.html"; // Cambia esto por la URL deseada
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
